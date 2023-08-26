@@ -19,6 +19,8 @@ import Pagination from "../../../components/Pagination";
 import DataRow from "./DataRow";
 import UserForm from "./UserForm";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { userSchema } from "../../auth/schema";
 
 const UsersTable = (props: any) => {
   const { userInfo }: any = useAppSelector((state) => state.auth);
@@ -34,6 +36,7 @@ const UsersTable = (props: any) => {
   };
   const { handleSubmit, control, reset, setValue } = useForm({
     defaultValues,
+    resolver: yupResolver(userSchema),
   });
 
   const handleClose = () => {

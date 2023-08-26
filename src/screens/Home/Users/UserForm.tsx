@@ -12,8 +12,15 @@ const RegisterField = (props: any) => {
     <Controller
       control={control}
       name={name}
-      render={({ field }) => (
-        <TextField fullWidth size="small" label={label} {...field} />
+      render={({ field, fieldState: { error } }) => (
+        <TextField
+          error={error ? true : false}
+          helperText={error?.message}
+          fullWidth
+          size="small"
+          label={label}
+          {...field}
+        />
       )}
     />
   );

@@ -14,6 +14,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../../features/auth/userApiSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setCredentials } from "../../features/auth/authSlice";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { registerSchema } from "./schema";
 
 const RegisterField = (props: any) => {
   const { control, name, label } = props;
@@ -27,12 +29,14 @@ const RegisterField = (props: any) => {
     <Controller
       control={control}
       name={name}
-      render={({ field }) => (
+      render={({ field, fieldState: { error } }) => (
         <>
           {name === "password" || name === "confirmPassword" ? (
             <TextField
               type={!isVisible ? "password" : "text"}
               label={label}
+              error={error ? true : false}
+              helperText={error?.message}
               InputProps={{
                 endAdornment: (
                   <InputAdornment
@@ -47,7 +51,12 @@ const RegisterField = (props: any) => {
               {...field}
             />
           ) : (
-            <TextField label={label} {...field} />
+            <TextField
+              error={error ? true : false}
+              helperText={error?.message}
+              label={label}
+              {...field}
+            />
           )}
         </>
       )}
@@ -79,6 +88,7 @@ const Register = () => {
   };
   const { handleSubmit, control } = useForm({
     defaultValues,
+    resolver: yupResolver(registerSchema),
   });
   const navigate = useNavigate();
   const dispatch = useAppDispatch();

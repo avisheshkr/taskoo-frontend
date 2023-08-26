@@ -1,22 +1,21 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { InputAdornment, TextField } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Controller } from "react-hook-form";
-import { toast } from "react-toastify";
 
 export const LoginField = (props: any) => {
   const { control, name, label } = props;
   const [isVisible, setIsVisible] = useState(false);
+
+  // useEffect(() => {
+  //   toast.error(error?.message);
+  // }, [error]);
 
   return (
     <Controller
       control={control}
       name={name}
       render={({ field, fieldState: { error } }) => {
-        useEffect(() => {
-          toast.error(error?.message);
-        }, [error]);
-
         return (
           <>
             {name === "password" ? (
@@ -36,6 +35,7 @@ export const LoginField = (props: any) => {
                   ),
                 }}
                 error={error ? true : false}
+                helperText={error?.message}
               />
             ) : (
               <TextField
@@ -43,6 +43,7 @@ export const LoginField = (props: any) => {
                 label={label}
                 {...field}
                 error={error ? true : false}
+                helperText={error?.message}
               />
             )}
           </>
