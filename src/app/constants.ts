@@ -1,7 +1,7 @@
 const BASE_URL =
   process.env.NODE_ENV === "development"
-    ? process.env.LOCAL_APIURL
-    : process.env.DOMAIN_APIURL;
+    ? import.meta.env.VITE_LOCALAPIURL
+    : import.meta.env.VITE_DOMAINAPIURL;
 const USER_URL = "/user";
 const TASK_URL = "/task";
 
