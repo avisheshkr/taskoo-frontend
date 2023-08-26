@@ -10,7 +10,9 @@ const Pagination = (props: any) => {
     event: React.MouseEvent<HTMLButtonElement> | null,
     newPage: number
   ) => {
-    setPage(newPage);
+    if (event) {
+      setPage(newPage);
+    }
   };
 
   const handleChangeRowsPerPage = (

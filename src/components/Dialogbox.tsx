@@ -60,8 +60,8 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 }
 
 const Dialogbox = (props: any) => {
-  const [fullWidth, setFullWidth] = useState(true);
-  const [maxWidth, setMaxWidth] = useState<DialogProps["maxWidth"]>("sm");
+  const [fullWidth] = useState(true);
+  const [maxWidth] = useState<DialogProps["maxWidth"]>("sm");
 
   const {
     handleClose,

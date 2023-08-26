@@ -1,4 +1,4 @@
-import { Box, Button, Paper, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import image from "../assets/nodatafound.png";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +7,6 @@ const NotFoundPage = () => {
 
   return (
     <Box
-      //   component={Paper}
       flex={1}
       display="flex"
       flexDirection="column"

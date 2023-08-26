@@ -7,13 +7,7 @@ import {
   Button,
   InputAdornment,
 } from "@mui/material";
-import {
-  AppRegistrationOutlined,
-  LockOpen,
-  LockOutlined,
-  Visibility,
-  VisibilityOff,
-} from "@mui/icons-material";
+import { LockOpen, Visibility, VisibilityOff } from "@mui/icons-material";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
@@ -33,7 +27,7 @@ const RegisterField = (props: any) => {
     <Controller
       control={control}
       name={name}
-      render={({ field, fieldState }) => (
+      render={({ field }) => (
         <>
           {name === "password" || name === "confirmPassword" ? (
             <TextField
