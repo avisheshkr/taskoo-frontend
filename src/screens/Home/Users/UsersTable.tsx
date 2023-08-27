@@ -100,7 +100,7 @@ const UsersTable = (props: any) => {
           alignItems="center"
           height="60vh"
         >
-          <CircularProgress color="success" />
+          <CircularProgress color="secondary" />
         </Box>
       ) : error.status === 401 ? (
         <NotAuthorized error={error} open={open} setOpen={setOpen} />

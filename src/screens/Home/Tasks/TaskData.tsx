@@ -155,7 +155,7 @@ const TaskData = (props: any) => {
           alignItems="center"
           mt={10}
         >
-          <CircularProgress color="success" />
+          <CircularProgress color="secondary" />
         </Box>
       ) : error.status === 401 ? (
         <NotAuthorized error={error} open={open} setOpen={setOpen} />

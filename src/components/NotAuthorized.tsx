@@ -45,7 +45,7 @@ const NotAuthorized = (props: any) => {
         </Box>
       </DialogContent>
       <DialogActions sx={{ margin: "0 auto", pb: 3 }}>
-        <Button onClick={handleClose} variant="contained" color="success">
+        <Button onClick={handleClose} variant="contained" color="secondary">
           Ok
         </Button>
       </DialogActions>
