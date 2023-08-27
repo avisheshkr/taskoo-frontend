@@ -35,7 +35,7 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
         m: 0,
         p: 2,
         fontWeight: "bold",
-        bgcolor: "secondary.main",
+        bgcolor: "warning.main",
         color: "#fff",
       }}
       {...other}
