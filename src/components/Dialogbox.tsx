@@ -35,7 +35,7 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
         m: 0,
         p: 2,
         fontWeight: "bold",
-        bgcolor: "success.main",
+        bgcolor: "secondary.main",
         color: "#fff",
       }}
       {...other}
@@ -89,7 +89,7 @@ const Dialogbox = (props: any) => {
         <Button
           onClick={handleSubmit(onSubmit)}
           variant="contained"
-          color="success"
+          color="secondary"
         >
           {saveText}
         </Button>
